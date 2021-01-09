@@ -1,13 +1,13 @@
 package cn.edu.jsu.mx.vo;
 
-public class gly {
+public class Gly {
 	private String xm;
 	private String xb;
 	private String zh;
 	private String mm;
 	private String nl;
-	public gly(){}
-	public gly(String xm,String xb,String nl,String zh,String mm){
+	public Gly(){}
+	public Gly(String xm,String xb,String nl,String zh,String mm){
 		this.xm=xm;
 		this.xb=xb;
 		this.nl=nl;

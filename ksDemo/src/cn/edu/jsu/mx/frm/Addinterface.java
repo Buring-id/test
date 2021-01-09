@@ -10,8 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import cn.edu.jsu.mx.dbc.Addinformation;
-import cn.edu.jsu.mx.dbc.insert;
-import cn.edu.jsu.mx.vo.xm;
+import cn.edu.jsu.mx.dbc.Insert;
+import cn.edu.jsu.mx.vo.Xm;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -47,7 +47,7 @@ public class Addinterface extends JFrame {
 	 * Create the frame.
 	 */
 	public Addinterface() {
-		xm user=new xm();
+		Xm user=new Xm();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

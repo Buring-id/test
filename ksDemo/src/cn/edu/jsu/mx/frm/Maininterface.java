@@ -9,18 +9,24 @@ import javax.swing.border.EmptyBorder;
 
 import cn.edu.jsu.mx.dao.TxtDao;
 import cn.edu.jsu.mx.dbc.Addinformation;
-import cn.edu.jsu.mx.vo.xm;
+import cn.edu.jsu.mx.dbc.Excelinterformation;
+import cn.edu.jsu.mx.vo.Xm;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -50,7 +56,7 @@ public class Maininterface extends JFrame {
 		});
 	}
 	public Maininterface() {
-		xm user=new xm();
+		Xm user=new Xm();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
@@ -96,11 +102,11 @@ public class Maininterface extends JFrame {
 		});
 		menu.add(addmenuItem);
 		
-		JMenu menu_1 = new JMenu("导出信息");
+		JMenu menu_1 = new JMenu("信息");
 		menuBar.add(menu_1);
 		
-		JMenuItem mntmExcel = new JMenuItem("文本文档");
-		mntmExcel.addActionListener(new ActionListener() {
+		JMenuItem mntmtxt = new JMenuItem("文本文档");
+		mntmtxt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					new TxtDao().export();
@@ -111,7 +117,16 @@ public class Maininterface extends JFrame {
 				dispose();
 			}
 		});
-		menu_1.add(mntmExcel);
+		menu_1.add(mntmtxt);
+		
+	JMenuItem mntmexcel = new JMenuItem("导入Excel");
+		mntmexcel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new Excelinterformation().main(null);;
+				JOptionPane.showMessageDialog(null, "导出成功");
+			}
+		});
+		menu_1.add(mntmexcel);
 		
 		JMenu menu_2 = new JMenu("时间");
 		menuBar.add(menu_2);

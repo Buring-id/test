@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 //testdb
-public class mysql {
+public class Mysql {
 	//定义MySQL数据库驱动程序
 	private static final String DBRIVER="org.gjt.mm.mysql.Driver";
 	//定义MySQL数据库连接地址
@@ -12,7 +12,7 @@ public class mysql {
 	private static final String DBUSER="root"; //MySQL数据库连接用户名
 	private static final String PASSWORD="20010401"; //MySQL数据库连接密码
 	private Connection conn=null; //保存连接对象
-	public mysql() {//构造方法连接数据库
+	public Mysql() {//构造方法连接数据库
 		try {
 			Class.forName(DBRIVER);
 			this.conn=DriverManager.getConnection(DBURL,DBUSER,PASSWORD);

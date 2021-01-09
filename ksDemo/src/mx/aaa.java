@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import cn.edu.jsu.mx.dbc.mysql;
+import cn.edu.jsu.mx.dbc.Mysql;
 
 public class aaa {
 	//定义姓氏
@@ -75,7 +75,7 @@ public class aaa {
     	addCJ();
     }
     public static void addCJ() {//增加成绩
-    	mysql dbcs=new mysql();//使用1中定义的连接数据库的类
+    	Mysql dbcs=new Mysql();//使用1中定义的连接数据库的类
     	String sql="insert into xm(xmm,id,jf,fzr) values(?,?,?,?)";//使用占位符定义插入语句
     	try(Connection conn=dbcs.getConnection();//获取数据库接
     		PreparedStatement pstmt=conn.prepareStatement(sql);){//实例化PreparedStatement

@@ -6,23 +6,23 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Vector;
 
-import cn.edu.jsu.mx.dbc.mysql;
-import cn.edu.jsu.mx.vo.gly;
+import cn.edu.jsu.mx.dbc.Mysql;
+import cn.edu.jsu.mx.vo.Gly;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class glyDao {
-	private Connection conn=new mysql().getConnection();
+	private Connection conn=new Mysql().getConnection();
 	public glyDao() {}
-	public List<gly> getAllScjData() {
-		List<gly> list=new ArrayList<gly>();
+	public List<Gly> getAllScjData() {
+		List<Gly> list=new ArrayList<Gly>();
 		String sql="select zh,mm from gly";
 		try(PreparedStatement pstmt=conn.prepareStatement(sql);) {
 			ResultSet rs=pstmt.executeQuery();
 			while(rs.next()) {
-				gly user=new gly();
+				Gly user=new Gly();
 				user.setZh(rs.getString(1));
 				user.setMm(rs.getString(2));
 				list.add(user);
@@ -33,11 +33,11 @@ public class glyDao {
 		}
 		return list;
 	}
-	public Vector<Vector> getTableRows(List<gly> list){
+	public Vector<Vector> getTableRows(List<Gly> list){
 		Vector<Vector> rows=new Vector<Vector>();
 		for(int i=0;i<list.size();i++) {
 			Vector row=new Vector();
-			gly user=list.get(i);
+			Gly user=list.get(i);
 			Collections.addAll(row, user.getZh(),user.getMm());
 			rows.add(row);
 		}

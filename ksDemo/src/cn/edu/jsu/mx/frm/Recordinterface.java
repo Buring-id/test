@@ -6,7 +6,7 @@ import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import cn.edu.jsu.mx.dao.TxtDao;
-import cn.edu.jsu.mx.dbc.mysql;
+import cn.edu.jsu.mx.dbc.Mysql;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -69,7 +69,7 @@ public static void main(String[] args){
 		public void actionPerformed(ActionEvent e){
 			String a1=zhtextField.getText().trim();
 			String a2=mmtextField_1.getText().trim();
-			mysql dbcs=new mysql();
+			Mysql dbcs=new Mysql();
 			try(Connection conn=dbcs.getConnection();//获取数据库连接
 		    		Statement stmt=conn.createStatement();){//实例化
 		    		String sql="select zh,mm from gly";

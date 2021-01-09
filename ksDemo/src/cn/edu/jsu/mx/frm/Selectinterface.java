@@ -27,7 +27,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-import cn.edu.jsu.mx.dbc.mysql;
+import cn.edu.jsu.mx.dbc.Mysql;
 
 
 public class Selectinterface extends JFrame{
@@ -179,7 +179,7 @@ private void initialize() {
 		btnNewButton_3.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			String key2=textField .getText().trim();
-			Connection conn=new mysql().getConnection();
+			Connection conn=new Mysql().getConnection();
 			Statement state=null;
 			try {
 				state = conn.createStatement();

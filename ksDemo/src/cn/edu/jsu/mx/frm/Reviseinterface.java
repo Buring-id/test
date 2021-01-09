@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import cn.edu.jsu.mx.dbc.mysql;
+import cn.edu.jsu.mx.dbc.Mysql;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -101,7 +101,7 @@ public class Reviseinterface extends JFrame {
 				String xm=xmtextField.getText().trim();
 				String jf=jftextField.getText().trim();
 				String fzr=fzrtextField.getText().trim();
-				Connection conn=new mysql().getConnection();
+				Connection conn=new Mysql().getConnection();
 				Statement state=null;
 				try{
 					state = conn.createStatement();

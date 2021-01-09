@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
-import cn.edu.jsu.mx.dbc.mysql;
+import cn.edu.jsu.mx.dbc.Mysql;
 
 public class PageController {
 	private static Vector<Vector> bigList ; // 大集合，从外界获取数据
@@ -62,7 +62,7 @@ public class PageController {
 	
 	public static Vector<Vector> Find(String sql){
 		Vector<Vector> rows=new Vector<Vector>();
-		mysql db=new mysql();
+		Mysql db=new Mysql();
 		try(Connection conn=db.getConnection();Statement stm=conn.createStatement();) {
 			ResultSet rs=stm.executeQuery(sql); 
 			while(rs.next()) { 
@@ -84,7 +84,7 @@ public class PageController {
 	
 	 public static Vector<Vector> getSelectAll(String sql){
 	    	Vector<Vector> rows=new Vector<Vector>();//定义要返回的所有记录集合
-	    	mysql dbcs=new mysql();//使用1中定义的连接数据库的类 
+	    	Mysql dbcs=new Mysql();//使用1中定义的连接数据库的类 
 	    	try(Connection conn=dbcs.getConnection();//获取数据库接 
 	    		PreparedStatement pstmt=conn.prepareStatement(sql);){//实例化PreparedStatement
 	    		ResultSet rs=pstmt.executeQuery();//执行查询语句，结果放到数据集中

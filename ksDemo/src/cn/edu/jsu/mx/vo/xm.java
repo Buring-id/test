@@ -1,6 +1,6 @@
 package cn.edu.jsu.mx.vo;
 
-public class xm {
+public class Xm {
 private String xmm;
 private String jf;
 private String fzr;
@@ -11,8 +11,8 @@ public String getId() {
 public void setId(String id) {
 	this.id = id;
 }
-public xm(){}
-public xm(String xmm,String jf,String fzr,String id){
+public Xm(){}
+public Xm(String xmm,String jf,String fzr,String id){
 	this.xmm=xmm;
 	this.jf=jf;
 	this.fzr=fzr;

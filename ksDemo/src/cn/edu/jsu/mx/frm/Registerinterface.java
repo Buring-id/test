@@ -5,8 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import cn.edu.jsu.mx.dbc.insert;
-import cn.edu.jsu.mx.vo.gly;
+import cn.edu.jsu.mx.dbc.Insert;
+import cn.edu.jsu.mx.vo.Gly;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +20,7 @@ public class Registerinterface {
 	private static JTextField zhtextField_3;
 	private static JTextField mmtextField_4;
 public static void main(String[] args){
-	gly user=new gly();
+	Gly user=new Gly();
 	JFrame frame=new JFrame("×¢²áÒ³Ãæ");
 	frame.setBounds(100,100,450,300);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,7 +80,7 @@ public static void main(String[] args){
 			user.setNl(nltextField_2.getText().trim());
 			user.setZh(zhtextField_3.getText().trim());
 			user.setMm(mmtextField_4.getText().trim());
-			new insert().add(user);
+			new Insert().add(user);
 			JOptionPane.showMessageDialog(null, "×¢²á³É¹¦");
 			new Recordinterface().main(null);
 			frame.dispose();

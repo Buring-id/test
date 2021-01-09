@@ -8,7 +8,7 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-import cn.edu.jsu.mx.dbc.mysql;
+import cn.edu.jsu.mx.dbc.Mysql;
 
 
 public class aa {
@@ -68,7 +68,7 @@ public class aa {
 	}
    
    public static boolean check(String sql) {
-	   mysql db=new mysql();
+	   Mysql db=new Mysql();
 		try(Connection conn=db.getConnection();Statement stm=conn.createStatement();) {
 			ResultSet rs=stm.executeQuery(sql); 
 			if(!rs.next()) { 
@@ -82,7 +82,7 @@ public class aa {
    }
    
    public static void input(String sql) {
-		mysql db=new mysql();
+		Mysql db=new Mysql();
 		try(Connection conn=db.getConnection();Statement stm=conn.createStatement();) {
 			stm.executeUpdate(sql);//执行数据库插入操作
 		} catch (SQLException e1) { 

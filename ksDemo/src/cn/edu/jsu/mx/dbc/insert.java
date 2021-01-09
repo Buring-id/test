@@ -4,15 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import cn.edu.jsu.mx.vo.gly;
+import cn.edu.jsu.mx.vo.Gly;
 
-public class insert  {
+public class Insert  {
 	
-	public void add(gly user) {
+	public void add(Gly user) {
 		
 		String sql="insert into gly(xm,xb,nl,zh,mm) values(?,?,?,?,?)";//使用占位符定义插入语句
 		
-		mysql dbcs=new mysql();
+		Mysql dbcs=new Mysql();
     	try(Connection conn=dbcs.getConnection();//获取数据库连接
     		PreparedStatement pstmt=conn.prepareStatement(sql);){//实例化
     		pstmt.setString(1, user.getXm());//定义第1个占位符的内容
